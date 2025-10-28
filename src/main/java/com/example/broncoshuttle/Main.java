@@ -114,34 +114,22 @@ public class Main extends Application {
         stopDropdown = new ComboBox<>();
         stopDropdown.setPromptText("Choose a stop to see arrivals...");
         stopDropdown.getItems().addAll(
-                "Metrolink 2",
-                "Collins College/Kellogg West (Northbound)",
-                "     Agriscapes/Farm Store",
-                "Parking Structure 1",
-                "PS2 Northwest",
-                "College of Environmental Design",
-                "Building 94",
-                "Residents Hall",
-                "     Student Services Building",
-                "Parking Lot B1",
-                "The Village",
-                "Metrolink 1",
-                "Interim Design Center Building",
-                "SSB",
-                "     Lyle Center",
-                "Village",
-                "Design Center",
-                "SSB2",
-                "Parking Structure 1 (South)",
-                "Red Gum / University",
-                "Residents Hall (South)",
-                "Building 1",
-                "Student Health Center",
-                "Collins College",
-                "     PS2 Across",
                 "The Current",
-                "Student Services Building (Main)",
-                "Pomona North Metrolink"
+               "Student Services Bulding",
+               "Lot E2 Near building 89",
+               "Lot B",
+               "Temple/University SW Corner",
+               "Lyle Center @ Top of Hill (Until 5:30PM)",
+               "Farm Store",
+               "The Village",
+               "Parking Structure 2 South Side",
+                "Collins College near building 79B",
+                "University Dr near Building 7",
+                "University Dr near Building 94",
+                "University Dr near Rose Garden",
+                "Parking Structure 1 West Side",
+                "Pomona North Metrolink",
+                "CPP Building 94"
         );
         stopDropdown.setStyle(
                 "-fx-font-size: 13; " +
@@ -166,8 +154,8 @@ public class Main extends Application {
         activeLabel.setTextFill(Color.web(TEXT_DARK));
 
         content.getChildren().add(activeLabel);
-        content.getChildren().add(createRouteCard("M1", "Main Campus Loop 1", true, 180, "Metrolink 2", "Moderate"));
-        content.getChildren().add(createRouteCard("M2", "Main Campus Loop 2", true, 420, "Student Services Building", "Low"));
+        content.getChildren().add(createRouteCard("M1", "Student Services Building", true, 180, "Lot E2 near Building 89\n(Interim Design Center)", "Moderate"));
+        content.getChildren().add(createRouteCard("M2", "Student Services Building", true, 420, "Lot E2 near Building 89\n(Interim Design Center)", "Near empty"));
 
         // Inactive Routes Section
         Label inactiveLabel = new Label("Currently Not Running");
@@ -515,12 +503,20 @@ public class Main extends Application {
         stopsHeader.setTextFill(Color.web(TEXT_DARK));
 
         VBox stopsList = new VBox(10);
-        stopsList.getChildren().add(createStopItem("1", "Parking Structure 1", 2, false));
+        stopsList.getChildren().add(createStopItem("1", "Student Services Bulding", 2, false));
         stopsList.getChildren().add(createStopItem("2", approaching, eta/60, true));
-        stopsList.getChildren().add(createStopItem("3", "Metrolink 1", 5, false));
-        stopsList.getChildren().add(createStopItem("4", "Interim Design Center Building", 8, false));
-        stopsList.getChildren().add(createStopItem("5", "SSB", 11, false));
-        stopsList.getChildren().add(createStopItem("6", "Village", 14, false));
+        stopsList.getChildren().add(createStopItem("3", "Student Services Bulding", 5, false));
+        stopsList.getChildren().add(createStopItem("4", "Lot B", 8, false));
+        stopsList.getChildren().add(createStopItem("5", "Temple/University SW Corner", 11, false));
+        stopsList.getChildren().add(createStopItem("6", "Lyle Center @ Top of Hill (Until 5:30PM)", 14, false));
+        stopsList.getChildren().add(createStopItem("7", "The Village", 14, false));
+        stopsList.getChildren().add(createStopItem("8", "Parking Structure 2 South Side", 19, false));
+        stopsList.getChildren().add(createStopItem("9", "Collins College near building 79B", 22, false));
+        stopsList.getChildren().add(createStopItem("10", "University Dr near Building 7\n(College of Environmental Design)", 28, false));
+        stopsList.getChildren().add(createStopItem("11", "University Dr near Building 94\n(University Office Building)", 31, false));
+        stopsList.getChildren().add(createStopItem("11", "University Dr near Rose Garden\n(Residents Hall)", 31, false));
+        stopsList.getChildren().add(createStopItem("13", "Parking Structure 1 West Side", 39, false));
+
 
         Button alertBtn = new Button("Set Arrival Alert");
         alertBtn.setFont(Font.font("System", FontWeight.SEMI_BOLD, 14));
